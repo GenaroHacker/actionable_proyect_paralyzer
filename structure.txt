@@ -1,0 +1,25 @@
+MyKivyApp/
+|-- main.py
+|-- config.ini
+|-- screens/
+|   |-- home_screen.py
+|   |-- settings_screen.py
+|   |-- ...
+|-- widgets/
+|   |-- custom_button.py
+|   |-- custom_label.py
+|   |-- ...
+|-- assets/
+|   |-- images/
+|   |-- fonts/
+|   |-- sounds/
+|-- utils/
+|   |-- helpers.py
+|   |-- constants.py
+|-- tests/
+|   |-- test_home_screen.py
+|   |-- ...
+|-- kv/
+|   |-- home_screen.kv
+|   |-- settings_screen.kv
+|   |-- ...
