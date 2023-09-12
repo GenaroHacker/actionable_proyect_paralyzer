@@ -1,7 +1,8 @@
 --CONTEXTS--
 ID: Unique identifier for the context. This primary key is essential to link with other tables if necessary.
 NAME: A descriptive name for the context, e.g., 'Work', 'Exercise', 'Relaxation', 'Sleep'.
-EXPECTED_PERCENTAGE: A numerical value representing the planned percentage of time to be spent in this context.
+EXPECTED_PERCENTAGE: The percentage of time expected to be spent in this context for the current week.
+FUTURE_EXPECTED_PERCENTAGE: The percentage of time expected to be spent in this context for the next week. This is the new column added.
 R: Value representing the Red component of the color, ranging from 0 to 1.
 G: Value representing the Green component of the color, ranging from 0 to 1.
 B: Value representing the Blue component of the color, ranging from 0 to 1.
