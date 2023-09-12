@@ -1,3 +1,4 @@
+--TASKS--
 ID: Unique identifier for the task.
 NAME: A descriptive name for the task.
 CONTEXT: Type of the task (create, exercise, relax, sleep).
@@ -9,7 +10,13 @@ START: The earliest time the task can be started.
 END: The latest time the task can be finished.
 FREQUENCY: How often the task needs to be performed in days.
 
+--HISTORY--
 ID: Unique identifier for the history entry.
 TASK_ID: Foreign key linking back to the task table.
 ACTION: Describes the action that took place (Started, Paused, Resumed, Completed, Canceled).
 TIME: The moment when the action occurred.
+
+--PLACEHOLDERS--
+ID: Unique identifier for each entry in the placeholders table.
+TYPE: A general category or type for the placeholder, such as "song," "task," "note," etc.
+VALUE: The specific value or content of the placeholder, like the title of a song or a specific note.
