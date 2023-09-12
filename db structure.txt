@@ -1,47 +1,45 @@
 --CONTEXTS--
-ID: Unique identifier for the context. This primary key is essential to link with other tables if necessary.
-NAME: A descriptive name for the context, e.g., 'Work', 'Exercise', 'Relaxation', 'Sleep'.
-EXPECTED_PERCENTAGE: The percentage of time expected to be spent in this context for the current week.
-FUTURE_EXPECTED_PERCENTAGE: The percentage of time expected to be spent in this context for the next week. This is the new column added.
-R: Value representing the Red component of the color, ranging from 0 to 1.
-G: Value representing the Green component of the color, ranging from 0 to 1.
-B: Value representing the Blue component of the color, ranging from 0 to 1.
+ID (int): Context's unique key.
+NAME (string): Context name, e.g., 'Work', 'Exercise'.
+EXPECTED_PERCENTAGE (int): Current week's expected time %.
+FUTURE_EXPECTED_PERCENTAGE (int): Next week's expected time %.
+R (float): Red color component, 0-1.
+G (float): Green color component, 0-1.
+B (float): Blue color component, 0-1.
 
 --TAGS--
-ID: Unique identifier for each tag entry.
-NAME: The name of the tag.
-CONTEXT_ID: Foreign key linking to the contexts table to associate the tag with a particular context.
+ID (int): Tag's unique key.
+NAME (string): Tag name.
+CONTEXT_ID (int): Foreign key to contexts table.
 
 --TASKS--
-ID: Unique identifier for the task.
-NAME: A descriptive name for the task.
-CONTEXT: Type of the task (create, exercise, relax, sleep).
-TAG: Keyword for easy categorization and retrieval.
-RANK: A ranking to indicate the importance of the task within its tag.
-DURATION: The estimated time needed to complete the task in minutes.
-DEPENDENCY: A task ID that needs to be completed before the task can be started.
-START: The earliest time the task can be started.
-END: The latest time the task can be finished.
-FREQUENCY: How often the task needs to be performed in days.
-WEEKDAYS: The specific weekdays the task should be performed (e.g., "yyyyynn").
+ID (int): Task's unique key.
+NAME (string): Task name.
+CONTEXT (string): Task type, e.g., 'create'.
+TAG_ID (int): Tag's ID.
+RANK (int): Task rank within tag.
+DURATION (int): Estimated minutes to complete.
+DEPENDENCY (int): Prerequisite task ID.
+START (datetime): Earliest start time.
+END (datetime): Latest end time.
+FREQUENCY (int): Task frequency in days.
+WEEKDAYS (string): Specific weekdays, e.g., "yyyyynn".
 
 --SUBTASKS--
-ID: Unique identifier for the subtask.
-TASK_ID: Foreign key linking back to the main task table.
-ORDER: Help in the ordering or sequencing of subtasks within a main task.
-NAME: A descriptive name for the subtask.
-DETAILS: Additional information or notes about the subtask.
-DURATION: The estimated time needed to complete the subtask in minutes.
+ID (int): Subtask's unique key.
+TASK_ID (int): Foreign key to tasks table.
+ORDER (int): Subtask sequence.
+NAME (string): Subtask name.
+DETAILS (string): Subtask notes.
+DURATION (int): Minutes to complete.
 
 --PLACEHOLDERS--
-ID: Unique identifier for each entry in the placeholders table.
-TYPE: A general category or type for the placeholder, such as "song," "task," "note," etc.
-VALUE: The specific value or content of the placeholder, like the title of a song or a specific note.
+ID (int): Placeholder's unique key.
+TYPE (string): Category, e.g., "song".
+VALUE (string): Placeholder content.
 
 --HISTORY--
-ID: Unique identifier for the history entry.
-SUBTASK_ID: Foreign key linking back to the subtask table.
-ACTION: Describes the action that took place (Started, Paused, Resumed, Completed, Canceled).
-TIME: The moment when the action occurred.
-
-
+ID (int): History entry's unique key.
+SUBTASK_ID (int): Foreign key to subtasks.
+ACTION (string): Action type (Started, Paused, Resumed, Canceled, Completed.).
+TIME (datetime): Action time.
