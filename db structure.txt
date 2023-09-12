@@ -9,6 +9,7 @@ DEPENDENCY: A task ID that needs to be completed before the task can be started.
 START: The earliest time the task can be started.
 END: The latest time the task can be finished.
 FREQUENCY: How often the task needs to be performed in days.
+WEEKDAYS: The specific weekdays the task should be performed (e.g., "yyyyynn").
 
 --HISTORY--
 ID: Unique identifier for the history entry.
