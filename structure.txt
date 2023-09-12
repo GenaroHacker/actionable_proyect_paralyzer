@@ -1,25 +1,26 @@
-MyKivyApp/
+winforce/
 |-- main.py
 |-- config.ini
 |-- screens/
 |   |-- home_screen.py
-|   |-- settings_screen.py
-|   |-- ...
+|   |-- task_collection_screen.py
+|   |-- subtask_sequence_screen.py
+|   |-- context_planner_screen.py
+|-- utils/
+|   |-- sql_core.py
+|   |-- sql_interface.py
+|   |-- time_tools.py
+|   |-- task_recommendator.py
+|   |-- manual_sort.py
+|-- tests/
+|   |-- test_db_consistency.py
 |-- widgets/
-|   |-- custom_button.py
-|   |-- custom_label.py
-|   |-- ...
 |-- assets/
 |   |-- images/
 |   |-- fonts/
 |   |-- sounds/
-|-- utils/
-|   |-- helpers.py
-|   |-- constants.py
-|-- tests/
-|   |-- test_home_screen.py
-|   |-- ...
 |-- kv/
 |   |-- home_screen.kv
-|   |-- settings_screen.kv
-|   |-- ...
+|   |-- task_collection_screen.kv
+|   |-- subtask_sequence_screen.kv
+|   |-- context_planner_screen.kv
