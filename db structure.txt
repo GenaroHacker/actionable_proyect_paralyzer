@@ -21,7 +21,7 @@ TASKS
     ID (int, Primary Key): Task's unique key.
     NAME (string): Task name.
     TAG_ID (int, Foreign Key REFERENCES TAGS(ID)): Tag's ID, which implicitly gives us the task context through the tag's CONTEXT_ID.
-    RANK (int, unique): Task rank within tag.
+    RANK (int): Task rank within tag.
     DEPENDENCY (int, Nullable, Foreign Key REFERENCES TASKS(ID)): Prerequisite task ID.
     START (datetime, Nullable): Earliest start time.
     END (datetime, Nullable): Latest end time.
