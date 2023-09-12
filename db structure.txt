@@ -1,6 +1,6 @@
 ID: Unique identifier for the task.
 NAME: A descriptive name for the task.
-CATEGORY: Type of the task (create, exercise, relax, sleep).
+CONTEXT: Type of the task (create, exercise, relax, sleep).
 TAG: Keyword for easy categorization and retrieval.
 RANK: A ranking to indicate the importance of the task within its tag.
 DURATION: The estimated time needed to complete the task in minutes.
