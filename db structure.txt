@@ -28,3 +28,11 @@ TIME: The moment when the action occurred.
 ID: Unique identifier for each entry in the placeholders table.
 TYPE: A general category or type for the placeholder, such as "song," "task," "note," etc.
 VALUE: The specific value or content of the placeholder, like the title of a song or a specific note.
+
+--CONTEXTS--
+ID: Unique identifier for the context. This primary key is essential to link with other tables if necessary.
+NAME: A descriptive name for the context, e.g., 'Work', 'Exercise', 'Relaxation', 'Sleep'.
+EXPECTED_PERCENTAGE: A numerical value representing the planned percentage of time to be spent in this context.
+R: Value representing the Red component of the color, ranging from 0 to 1.
+G: Value representing the Green component of the color, ranging from 0 to 1.
+B: Value representing the Blue component of the color, ranging from 0 to 1.
