@@ -12,11 +12,11 @@ FREQUENCY: How often the task needs to be performed in days.
 WEEKDAYS: The specific weekdays the task should be performed (e.g., "yyyyynn").
 
 --SUBTASKS--
-    ID: Unique identifier for the subtask.
-    TASK_ID: Foreign key linking back to the main task table.
-    NAME: A descriptive name for the subtask.
-    DETAILS: Additional information or notes about the subtask.
-    DURATION: The estimated time needed to complete the subtask in minutes.
+ID: Unique identifier for the subtask.
+TASK_ID: Foreign key linking back to the main task table.
+NAME: A descriptive name for the subtask.
+DETAILS: Additional information or notes about the subtask.
+DURATION: The estimated time needed to complete the subtask in minutes.
 
 --HISTORY--
 ID: Unique identifier for the history entry.
