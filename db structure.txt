@@ -36,3 +36,8 @@ EXPECTED_PERCENTAGE: A numerical value representing the planned percentage of ti
 R: Value representing the Red component of the color, ranging from 0 to 1.
 G: Value representing the Green component of the color, ranging from 0 to 1.
 B: Value representing the Blue component of the color, ranging from 0 to 1.
+
+--TAGS--
+ID: Unique identifier for each tag entry.
+NAME: The name of the tag.
+CONTEXT_ID: Foreign key linking to the contexts table to associate the tag with a particular context.
