@@ -9,3 +9,7 @@ End Time: The latest time the task can be finished.
 Category: Type of the task (create, excersise, relax, sleep).
 Frequency: How often the task needs to be performed in days.
 
+HistoryID: Unique identifier for the history entry.
+TaskID: Foreign key linking back to the task table.
+Action: Describes the action that took place (e.g., Created, Modified, Completed, Deleted).
+Timestamp: The time when the action occurred.
