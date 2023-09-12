@@ -1,15 +1,15 @@
 ID: Unique identifier for the task.
-Task Name: A descriptive name for the task.
-Tags: Keyword for easy categorization and retrieval.
-Priority: A ranking to indicate the importance of the task within its tag.
-Duration: The estimated time needed to complete the task in minutes.
-Dependency: A task ID that needs to be completed before the task can be started.
-Start Time: The earliest time the task can be started.
-End Time: The latest time the task can be finished.
-Category: Type of the task (create, excersise, relax, sleep).
-Frequency: How often the task needs to be performed in days.
+NAME: A descriptive name for the task.
+CATEGORY: Type of the task (create, exercise, relax, sleep).
+TAG: Keyword for easy categorization and retrieval.
+RANK: A ranking to indicate the importance of the task within its tag.
+DURATION: The estimated time needed to complete the task in minutes.
+DEPENDENCY: A task ID that needs to be completed before the task can be started.
+START: The earliest time the task can be started.
+END: The latest time the task can be finished.
+FREQUENCY: How often the task needs to be performed in days.
 
-HistoryID: Unique identifier for the history entry.
-TaskID: Foreign key linking back to the task table.
-Action: Describes the action that took place (e.g., Created, Modified, Completed, Deleted).
-Timestamp: The time when the action occurred.
+ID: Unique identifier for the history entry.
+TASK_ID: Foreign key linking back to the task table.
+ACTION: Describes the action that took place (Started, Paused, Resumed, Completed, Canceled).
+TIME: The moment when the action occurred.
