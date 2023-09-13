@@ -1,4 +1,4 @@
-winforce/
+actionable/
 |-- main.py
 |-- config.ini
 |-- screens/
