@@ -1,0 +1,18 @@
+<AScreen>:
+    ScrollView:
+        do_scroll_x: False
+        GridLayout:
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
+            canvas.before:
+                Color:
+                    rgb: 1, 0, 0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Button:
+                text: 'Go to Screen B'
+                size_hint_y: None
+                height: 40
+                on_press: root.manager.current = 'b'

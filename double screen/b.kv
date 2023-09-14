@@ -1,0 +1,18 @@
+<BScreen>:
+    ScrollView:
+        do_scroll_x: False
+        GridLayout:
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
+            canvas.before:
+                Color:
+                    rgb: 0, 1, 0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Button:
+                text: 'Go to Screen A'
+                size_hint_y: None
+                height: 40
+                on_press: root.manager.current = 'a'
