@@ -3,7 +3,7 @@ the hierarchy is Context -> Tag -> Task -> Subtask
 CONTEXTS
 
     ID (int, Primary Key): Context's unique key.
-    NAME (string): Context name, e.g., 'Work', 'Exercise'.
+    NAME (string): Context name: 'Create', 'Exercise', 'Sleep', 'Recreate'.
     EXPECTED_PERCENTAGE (int): Current week's expected time %.
     FUTURE_EXPECTED_PERCENTAGE (int): Next week's expected time %.
     R (float): Red color component, 0-1.
