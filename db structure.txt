@@ -14,16 +14,16 @@ TAGS
 
     ID (int, Primary Key): Tag's unique key.
     NAME (string): Tag name.
-    CONTEXT_ID (int, Foreign Key REFERENCES CONTEXTS(ID)): Context's ID.
+    CONTEXT_ID (int): Context's ID.
     RANK (int): Tag rank within its context.
 
 TASKS
 
     ID (int, Primary Key): Task's unique key.
     NAME (string): Task name.
-    TAG_ID (int, Foreign Key REFERENCES TAGS(ID)): Tag's ID, which implicitly gives us the task context through the tag's CONTEXT_ID.
+    TAG_ID (int): Tag's ID, which implicitly gives us the task context through the tag's CONTEXT_ID.
     RANK (int): Task rank within its tag.
-    DEPENDENCY (int, Nullable, Foreign Key REFERENCES TASKS(ID)): Prerequisite task ID.
+    DEPENDENCY (int, Nullable): Prerequisite task ID.
     START (datetime, Nullable): Earliest start time.
     END (datetime, Nullable): Latest end time.
     FREQUENCY (int): Task frequency in days.
@@ -32,7 +32,7 @@ TASKS
 SUBTASKS
 
     ID (int, Primary Key): Subtask's unique key.
-    TASK_ID (int, Foreign Key REFERENCES TASKS(ID)): Task's ID.
+    TASK_ID (int): Task's ID.
     ORDER (int): Subtask sequence.
     NAME (string): Subtask name.
     DETAILS (string): Subtask notes.
@@ -47,6 +47,6 @@ PLACEHOLDERS
 HISTORY
 
     ID (int, Primary Key): History entry's unique key.
-    SUBTASK_ID (int, Foreign Key REFERENCES SUBTASKS(ID)): Subtask's ID.
+    SUBTASK_ID (int): Subtask's ID.
     ACTION (string): Action type (Started, Paused, Resumed, Canceled, Completed).
     TIME (datetime): Action time.
