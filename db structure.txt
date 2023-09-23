@@ -23,7 +23,7 @@ TASKS
     NAME (string): Task name.
     TAG_ID (int): Tag's ID, which implicitly gives us the task context through the tag's CONTEXT_ID.
     RANK (int): Task rank within its tag.
-    DEPENDENCY (int, Nullable): Prerequisite task ID.
+    DEPENDENCY_ID (int, Nullable): Prerequisite task ID.
     START (datetime, Nullable): Earliest start time.
     END (datetime, Nullable): Latest end time.
     FREQUENCY (int): Task frequency in days.
@@ -33,7 +33,7 @@ SUBTASKS
 
     ID (int, Primary Key): Subtask's unique key.
     TASK_ID (int): Task's ID.
-    ORDER (int): Subtask sequence.
+    ORDER_SEQUENCE (int): Subtask sequence.
     NAME (string): Subtask name.
     DETAILS (string): Subtask notes.
     DURATION (int): Minutes to complete.
