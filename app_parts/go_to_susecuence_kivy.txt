@@ -1,0 +1,61 @@
+                ToggleButton:
+                    text: 't1'
+                    size_hint_y: None
+                    height: 50
+                    group: 'tasks_group'
+                    btn_id: 1
+                    on_press:
+                        root.active_task = self.btn_id
+                        start_button.disabled = False
+
+                ToggleButton:
+                    text: 't2'
+                    size_hint_y: None
+                    height: 50
+                    group: 'tasks_group'
+                    btn_id: 2
+                    on_press:
+                        root.active_task = self.btn_id
+                        start_button.disabled = False
+
+                ToggleButton:
+                    text: 't3'
+                    size_hint_y: None
+                    height: 50
+                    group: 'tasks_group'
+                    btn_id: 3
+                    on_press:
+                        root.active_task = self.btn_id
+                        start_button.disabled = False
+
+                ToggleButton:
+                    text: 't4'
+                    size_hint_y: None
+                    height: 50
+                    group: 'tasks_group'
+                    btn_id: 4
+                    on_press:
+                        root.active_task = self.btn_id
+                        start_button.disabled = False
+
+                ToggleButton:
+                    text: 't5'
+                    size_hint_y: None
+                    height: 50
+                    group: 'tasks_group'
+                    btn_id: 5
+                    on_press:
+                        root.active_task = self.btn_id
+                        start_button.disabled = False
+
+                Button:
+                    text: 'Start'
+                    size_hint_y: None
+                    height: 50
+                    id: start_button
+                    disabled: True
+                    on_press: root.start(root.active_task)
+
+def t1(task_id):
+    print(task_id)
+
