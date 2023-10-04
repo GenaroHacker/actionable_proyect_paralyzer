@@ -1,2 +1,0 @@
-def recommendations():
-	print("Recommendations")
