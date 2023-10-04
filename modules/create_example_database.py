@@ -70,11 +70,9 @@ def populate_contexts():
         ("Recreate", 25, 25, 0.13, 0.64, 0.15),
         ("Sleep", 25, 25, 0.46, 0.00, 0.00)
     ]
+    
     for record in records:
-        sql_command = f"""
-        INSERT INTO CONTEXTS (NAME, EXPECTED_PERCENTAGE, FUTURE_EXPECTED_PERCENTAGE, R, G, B) 
-        VALUES ('{record[0]}', {record[1]}, {record[2]}, {record[3]}, {record[4]}, {record[5]});
-        """
+        sql_command = f"INSERT INTO CONTEXTS (NAME, EXPECTED_PERCENTAGE, FUTURE_EXPECTED_PERCENTAGE, R, G, B) VALUES ('{record[0]}', {record[1]}, {record[2]}, {record[3]}, {record[4]}, {record[5]})"
         insert_record(DB_NAME, sql_command)
 
 
@@ -95,9 +93,11 @@ def populate_tags():
         ("sleep", 4, 1),
         ("meditate", 4, 2)
     ]
-
+    
     for record in records:
-        insert_record(DB_NAME, "TAGS", ["NAME", "CONTEXT_ID", "RANK"], record)
+        sql_command = f"INSERT INTO TAGS (NAME, CONTEXT_ID, RANK) VALUES ('{record[0]}', {record[1]}, {record[2]})"
+        insert_record(DB_NAME, sql_command)
+
 
 def populate_tasks():
     records = [
@@ -112,7 +112,10 @@ def populate_tasks():
     ]
 
     for record in records:
-        insert_record(DB_NAME, "TASKS", ["NAME", "TAG_ID", "RANK", "WEEKDAYS", "DEPENDENCY_ID", "START", "END", "FREQUENCY"], record)
+        dependency = "NULL" if record[4] is None else record[4]
+        sql_command = f"INSERT INTO TASKS (NAME, TAG_ID, RANK, WEEKDAYS, DEPENDENCY_ID, START, END, FREQUENCY) VALUES ('{record[0]}', {record[1]}, {record[2]}, '{record[3]}', {dependency}, '{record[5]}', '{record[6]}', {record[7]})"
+        insert_record(DB_NAME, sql_command)
+
 
 def populate_subtasks():
     records = [
@@ -158,7 +161,8 @@ def populate_subtasks():
     ]
 
     for record in records:
-        insert_record(DB_NAME, "SUBTASKS", ["TASK_ID", "ORDER_SEQUENCE", "NAME", "DETAILS", "DURATION"], record)
+        sql_command = f"INSERT INTO SUBTASKS (TASK_ID, ORDER_SEQUENCE, NAME, DETAILS, DURATION) VALUES ({record[0]}, {record[1]}, '{record[2]}', '{record[3]}', '{record[4]}')"
+        insert_record(DB_NAME, sql_command)
 
 def populate_placeholders():
     records = [
@@ -178,7 +182,8 @@ def populate_placeholders():
     ]
 
     for record in records:
-        insert_record(DB_NAME, "PLACEHOLDERS", ["TYPE", "VALUE"], record)
+        sql_command = f"INSERT INTO PLACEHOLDERS (TYPE, VALUE) VALUES ('{record[0]}', '{record[1]}')"
+        insert_record(DB_NAME, sql_command)
 
 def create_example_database():
     create_tables()
@@ -187,4 +192,3 @@ def create_example_database():
     populate_tasks()
     populate_subtasks()
     populate_placeholders()
-
