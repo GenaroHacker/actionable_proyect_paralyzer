@@ -1,0 +1,100 @@
+<SettingsScreen>:
+    ScrollView:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        do_scroll_x: False
+        GridLayout:
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
+            padding: 30
+            spacing: 30
+            Label:
+                text: 'Settings'
+                color: (1, 1, 1)
+                canvas.before:
+                    Color:
+                        rgb: 0.1, 0.1, 0.1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                size_hint_y: None
+                height: 100
+            GridLayout:
+                cols: 4
+                size_hint_y: None
+                height: self.minimum_height
+                padding: 10
+                spacing: 10
+                canvas.before:
+                    Color:
+                        rgb: 0.5, 0.5, 0.5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Button:
+                    text: 'Home'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.go_to_home()
+                Button:
+                    text: 'Settings'
+                    size_hint_y: None
+                    height: 50
+                    disabled: True
+                Button:
+                    text: 'Profile'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.go_to_profile()
+                Button:
+                    text: 'Cart'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.go_to_cart()
+            GridLayout:
+                cols: 3
+                size_hint_y: None
+                height: self.minimum_height
+                padding: 10
+                spacing: 10
+                canvas.before:
+                    Color:
+                        rgb: 0.1, 0.1, 0.1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Button:
+                    text: 'Payment Methods'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.payment_methods()
+                Button:
+                    text: 'Shipping Address'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.shipping_address()
+                Button:
+                    text: 'Notification Preferences'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.notification_preferences()
+                Button:
+                    text: 'Account Settings'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.account_settings()
+                Button:
+                    text: 'Volume Up'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.volume_up()
+                Button:
+                    text: 'Volume Down'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.volume_down()

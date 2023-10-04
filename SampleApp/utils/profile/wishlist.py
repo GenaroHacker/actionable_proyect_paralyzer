@@ -1,0 +1,2 @@
+def wishlist():
+	print("Wishlist")

@@ -1,0 +1,90 @@
+<CartScreen>:
+    ScrollView:
+        canvas.before:
+            Color:
+                rgb: 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        do_scroll_x: False
+        GridLayout:
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
+            padding: 30
+            spacing: 30
+            Label:
+                text: 'Cart'
+                color: (0, 0, 0)
+                canvas.before:
+                    Color:
+                        rgb: 0.9, 0.9, 0.9
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                size_hint_y: None
+                height: 100
+            GridLayout:
+                cols: 4
+                size_hint_y: None
+                height: self.minimum_height
+                padding: 10
+                spacing: 10
+                canvas.before:
+                    Color:
+                        rgb: 0.5, 0.5, 0.5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Button:
+                    text: 'Home'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.go_to_home()
+                Button:
+                    text: 'Settings'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.go_to_settings()
+                Button:
+                    text: 'Profile'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.go_to_profile()
+                Button:
+                    text: 'Cart'
+                    size_hint_y: None
+                    height: 50
+                    disabled: True
+            GridLayout:
+                cols: 4
+                size_hint_y: None
+                height: self.minimum_height
+                padding: 10
+                spacing: 10
+                canvas.before:
+                    Color:
+                        rgb: 0.9, 0.9, 0.9
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Button:
+                    text: 'View Cart'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.view_cart()
+                Button:
+                    text: 'Checkout'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.checkout()
+                Button:
+                    text: 'Apply Coupon'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.apply_coupon()
+                Button:
+                    text: 'Estimate Shipping'
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.estimate_shipping()

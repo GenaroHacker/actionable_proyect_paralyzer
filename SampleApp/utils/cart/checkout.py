@@ -1,0 +1,2 @@
+def checkout():
+	print("Checkout")
