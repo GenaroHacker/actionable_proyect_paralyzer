@@ -1,3 +1,12 @@
+from actionable.modules.sql_core import create_table
+from actionable.modules.sql_core import insert_record
+from actionable.modules.sql_core import insert_several_records
+from actionable.modules.sql_core import read_records
+from actionable.modules.sql_core import read_last_record
+from actionable.modules.sql_core import update_record
+from actionable.modules.sql_core import remove_record
+from actionable.modules.sql_core import run_command
+
 def create_example_database():
     # @title Create Tables
     def create_tables():
