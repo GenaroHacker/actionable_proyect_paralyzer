@@ -1,3 +1,5 @@
+from google.colab import files
+
 from actionable.modules.sql_core import (
     create_table, 
     insert_record, 
@@ -192,3 +194,6 @@ def create_example_database():
     populate_tasks()
     populate_subtasks()
     populate_placeholders()
+
+    # Trigger download
+    files.download(DB_NAME)
