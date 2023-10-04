@@ -70,9 +70,13 @@ def populate_contexts():
         ("Recreate", 25, 25, 0.13, 0.64, 0.15),
         ("Sleep", 25, 25, 0.46, 0.00, 0.00)
     ]
-
     for record in records:
-        insert_record(DB_NAME, "CONTEXTS", ["NAME", "EXPECTED_PERCENTAGE", "FUTURE_EXPECTED_PERCENTAGE", "R", "G", "B"], record)
+        sql_command = f"""
+        INSERT INTO CONTEXTS (NAME, EXPECTED_PERCENTAGE, FUTURE_EXPECTED_PERCENTAGE, R, G, B) 
+        VALUES ('{record[0]}', {record[1]}, {record[2]}, {record[3]}, {record[4]}, {record[5]});
+        """
+        insert_record(DB_NAME, sql_command)
+
 
 def populate_tags():
     records = [
