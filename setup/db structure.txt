@@ -1,0 +1,52 @@
+the hierarchy is Context -> Tag -> Task -> Subtask
+
+CONTEXTS
+
+    ID (int, Primary Key): Context's unique key.
+    NAME (string): Context name: 'Create', 'Exercise', 'Sleep', 'Recreate'.
+    EXPECTED_PERCENTAGE (int): Current week's expected time %.
+    FUTURE_EXPECTED_PERCENTAGE (int): Next week's expected time %.
+    R (float): Red color component, 0-1.
+    G (float): Green color component, 0-1.
+    B (float): Blue color component, 0-1.
+
+TAGS
+
+    ID (int, Primary Key): Tag's unique key.
+    NAME (string): Tag name.
+    CONTEXT_ID (int): Context's ID.
+    RANK (int): Tag rank within its context.
+
+TASKS
+
+    ID (int, Primary Key): Task's unique key.
+    NAME (string): Task name.
+    TAG_ID (int): Tag's ID, which implicitly gives us the task context through the tag's CONTEXT_ID.
+    RANK (int): Task rank within its tag.
+    DEPENDENCY_ID (int, Nullable): Prerequisite task ID.
+    START (datetime, Nullable): Earliest start time.
+    END (datetime, Nullable): Latest end time.
+    FREQUENCY (int): Task frequency in days.
+    WEEKDAYS (string): Specific weekdays, e.g., "yyyyynn".
+
+SUBTASKS
+
+    ID (int, Primary Key): Subtask's unique key.
+    TASK_ID (int): Task's ID.
+    ORDER_SEQUENCE (int): Subtask sequence.
+    NAME (string): Subtask name.
+    DETAILS (string): Subtask notes.
+    DURATION (int): Minutes to complete.
+
+PLACEHOLDERS
+
+    ID (int, Primary Key): Placeholder's unique key.
+    TYPE (string): Category, e.g., "song".
+    VALUE (string): Placeholder content.
+
+HISTORY
+
+    ID (int, Primary Key): History entry's unique key.
+    SUBTASK_ID (int): Subtask's ID.
+    ACTION (string): Action type (Started, Paused, Resumed, Canceled, Completed).
+    TIME (datetime): Action time.
