@@ -72,7 +72,7 @@ def populate_contexts():
     ]
     
     for record in records:
-        sql_command = f"INSERT INTO CONTEXTS (NAME, EXPECTED_PERCENTAGE, FUTURE_EXPECTED_PERCENTAGE, R, G, B) VALUES ('{record[0]}', {record[1]}, {record[2]}, {record[3]}, {record[4]}, {record[5]})"
+        sql_command = f"INSERT INTO CONTEXTS (NAME, EXPECTED_PERCENTAGE, R, G, B) VALUES ('{record[0]}', {record[1]}, {record[2]}, {record[3]}, {record[4]})"
         insert_record(DB_NAME, sql_command)
 
 
@@ -113,7 +113,7 @@ def populate_tasks():
 
     for record in records:
         dependency = "NULL" if record[4] is None else record[4]
-        sql_command = f"INSERT INTO TASKS (NAME, TAG_ID, RANK, WEEKDAYS, DEPENDENCY_ID, START, END, FREQUENCY) VALUES ('{record[0]}', {record[1]}, {record[2]}, '{record[3]}', {dependency}, '{record[5]}', '{record[6]}', {record[7]})"
+        sql_command = f"INSERT INTO TASKS (NAME, TAG_ID, RANK, WEEKDAYS, DEPENDENCY_ID, START, END) VALUES ('{record[0]}', {record[1]}, {record[2]}, '{record[3]}', {dependency}, '{record[5]}', '{record[6]}')"
         insert_record(DB_NAME, sql_command)
 
 
