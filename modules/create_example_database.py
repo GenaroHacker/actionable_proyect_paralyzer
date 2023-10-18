@@ -161,7 +161,7 @@ def populate_subtasks():
     ]
 
     for record in records:
-        sql_command = f"INSERT INTO SUBTASKS (TASK_ID, ORDER_SEQUENCE, NAME, DETAILS, DURATION) VALUES ({record[0]}, {record[1]}, '{record[2]}', '{record[3]}', '{record[4]}')"
+        sql_command = f"INSERT INTO SUBTASKS (TASK_ID, ORDER_SEQUENCE, NAME, DETAILS, DURATION) VALUES ({record[0]}, {record[1]}, '{record[2]}', '{record[3]}', {record[4]})"
         insert_record(DB_NAME, sql_command)
 
 def populate_placeholders():
