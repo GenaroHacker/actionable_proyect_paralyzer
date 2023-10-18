@@ -19,7 +19,6 @@ def create_tables():
             ID INTEGER PRIMARY KEY AUTOINCREMENT,
             NAME TEXT,
             EXPECTED_PERCENTAGE INTEGER,
-            FUTURE_EXPECTED_PERCENTAGE INTEGER,
             R REAL,
             G REAL,
             B REAL
@@ -38,7 +37,6 @@ def create_tables():
             DEPENDENCY_ID INTEGER REFERENCES TASKS(ID),
             START TIME,
             END TIME,
-            FREQUENCY REAL,
             WEEKDAYS TEXT
         """,
         "SUBTASKS": """
@@ -67,10 +65,10 @@ def create_tables():
 
 def populate_contexts():
     records = [
-        ("Create", 25, 25, 0.00, 0.45, 1.00),
-        ("Exercise", 25, 25, 1.00, 0.46, 0.00),
-        ("Recreate", 25, 25, 0.13, 0.64, 0.15),
-        ("Sleep", 25, 25, 0.46, 0.00, 0.00)
+        ("Create", 25, 0.00, 0.45, 1.00),
+        ("Exercise", 25, 1.00, 0.46, 0.00),
+        ("Recreate", 25, 0.13, 0.64, 0.15),
+        ("Sleep", 25, 0.46, 0.00, 0.00)
     ]
     
     for record in records:
@@ -103,14 +101,14 @@ def populate_tags():
 
 def populate_tasks():
     records = [
-        ("Write a thank you list", 1, 1, "yyyyyyy", None, "08:00:00", "20:00:00", 1),
-        ("Automate a repetitive computer task", 3, 1, "yyyyyyy", None, "08:00:00", "20:00:00", 1),
-        ("Learn a new %programming_language% concept", 3, 2, "yyyyyyy", None, "08:00:00", "20:00:00", 1),
-        ("Plan meals for the upcoming week", 4, 1, "yyyyyyy", None, "08:00:00", "20:00:00", 1),
-        ("Do a quick %exercise_name% session", 5, 1, "yyyyyyy", 6, "08:00:00", "20:00:00", 1.5),
-        ("Perform basic %exercise_name%", 6, 1, "yyyyyyy", 6, "08:00:00", "20:00:00", 1),
-        ("Watch %movie_name%", 9, 1, "yyyyyyy", None, "08:00:00", "20:00:00", 1),
-        ("Go to sleep", 13, 1, "yyyyyyy", None, "08:00:00", "20:00:00", 1)
+        ("Write a thank you list", 1, 1, "yyyyyyy", None, "08:00:00", "20:00:00"),
+        ("Automate a repetitive computer task", 3, 1, "yyyyyyy", None, "08:00:00", "20:00:00"),
+        ("Learn a new %programming_language% concept", 3, 2, "yyyyyyy", None, "08:00:00", "20:00:00"),
+        ("Plan meals for the upcoming week", 4, 1, "yyyyyyy", None, "08:00:00", "20:00:00"),
+        ("Do a quick %exercise_name% session", 5, 1, "yyyyyyy", 6, "08:00:00", "20:00:00"),
+        ("Perform basic %exercise_name%", 6, 1, "yyyyyyy", 6, "08:00:00", "20:00:00"),
+        ("Watch %movie_name%", 9, 1, "yyyyyyy", None, "08:00:00", "20:00:00"),
+        ("Go to sleep", 13, 1, "yyyyyyy", None, "08:00:00", "20:00:00")
     ]
 
     for record in records:
