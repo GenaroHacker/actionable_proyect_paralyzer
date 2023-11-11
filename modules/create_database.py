@@ -36,7 +36,7 @@ def create_empty_database():
                  "FOREIGN KEY(TAG_ID) REFERENCES TAGS(ID), UNIQUE(TAG_ID, NAME)",
         "STEPS": "ID INTEGER PRIMARY KEY, TASK_ID INTEGER, NAME TEXT, ORDER_SEQUENCE INTEGER, "
                  "MINUTES INTEGER, FOREIGN KEY(TASK_ID) REFERENCES TASKS(ID), UNIQUE(TASK_ID, ORDER_SEQUENCE)",
-        "PLACEHOLDERS": "ID INTEGER PRIMARY KEY, TYPE TEXT, VALUE TEXT, UNIQUE(TYPE, VALUE)",
+        "PLACEHOLDERS": "ID INTEGER PRIMARY KEY, TYPE TEXT, VALUE TEXT, RANK INTEGER, UNIQUE(TYPE, VALUE)",
         "HISTORY": "ID INTEGER PRIMARY KEY, STEP_ID INTEGER, ACTION TEXT, TIME TEXT, "
                    "FOREIGN KEY(STEP_ID) REFERENCES STEPS(ID)"
     }
@@ -83,11 +83,12 @@ def add_task(task_input):
             insert_record(DATABASE_NAME, step_sql, (task_id, step, index))
 
 def add_placeholders(placeholders_dict):
-    insert_sql = "INSERT INTO PLACEHOLDERS (TYPE, VALUE) VALUES (?, ?)"
+    insert_sql = "INSERT INTO PLACEHOLDERS (TYPE, VALUE, RANK) VALUES (?, ?, ?)"
     for placeholder_type, values in placeholders_dict.items():
         for value in values:
+            rank = None
             try:
-                insert_record(DATABASE_NAME, insert_sql, (placeholder_type, value))
+                insert_record(DATABASE_NAME, insert_sql, (placeholder_type, value, rank))
             except sqlite3.IntegrityError:
                 continue
 
