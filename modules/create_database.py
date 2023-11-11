@@ -1,8 +1,6 @@
 import sqlite3
 from google.colab import files
 import os
-from actionable_builder.modules.sql_core import create_table
-from actionable_builder.modules.sql_core import insert_record
 from actionable_builder.modules.sql_core import insert_several_records
 from actionable_builder.modules.sql_core import read_records
 from actionable_builder.modules.sql_core import read_last_record
