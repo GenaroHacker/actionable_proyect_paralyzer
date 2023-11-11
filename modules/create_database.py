@@ -97,7 +97,10 @@ def initialize_database():
         create_empty_database()
     elif user_choice == '2':
         create_example_database()
-        add_example_data()
+        tasks, placeholders = add_example_data()
+        for task in tasks:
+            add_task(task)
+        add_placeholders(placeholders)
     elif user_choice == '3':
         uploaded_files = files.upload()
         for filename in uploaded_files.keys():
