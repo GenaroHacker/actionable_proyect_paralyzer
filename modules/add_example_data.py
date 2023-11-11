@@ -1,3 +1,6 @@
+from actionable_builder.modules.create_database import add_task
+from actionable_builder.modules.create_database import add_placeholders
+
 def add_example_data():
     # Task 1
     task = {
