@@ -7,6 +7,7 @@ from actionable_builder.modules.sql_core import read_last_record
 from actionable_builder.modules.sql_core import update_record
 from actionable_builder.modules.sql_core import remove_record
 from actionable_builder.modules.sql_core import run_command
+from actionable_builder.modules.add_example_data import add_example_data
 
 # Constant for the database name
 DATABASE_NAME = 'tasks.db'
@@ -96,6 +97,7 @@ def initialize_database():
         create_empty_database()
     elif user_choice == '2':
         create_example_database()
+        add_example_data()
     elif user_choice == '3':
         uploaded_files = files.upload()
         for filename in uploaded_files.keys():
