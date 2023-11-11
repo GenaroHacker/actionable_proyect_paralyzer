@@ -1,0 +1,29 @@
+# @title Create App
+
+# Define app structure dictionary
+screens = {
+    'tasks': {
+        'reachable_screens': ['steps'],
+        'custom_functions': ['t1', 't2', 't3', 't4', 't5', 'Change Place', 'Refresh', 'Start'],
+        'grid_columns': 1,
+        'color': (0, 0, 0),
+    },
+    'steps': {
+        'reachable_screens': ['tasks'],
+        'custom_functions': ['Pause', 'Cancel', 'Next Step'],
+        'grid_columns': 3,
+        'color': (1, 1, 1),
+    }
+}
+
+# Create and download app
+create_app(
+    screen_dict=screens,
+    folder_name="proyect",
+    app_name="actionable",
+    title_height=100,
+    button_height=50,
+    navigation_columns=2,
+    transition='NoTransition',
+    compress_and_download=True
+)
