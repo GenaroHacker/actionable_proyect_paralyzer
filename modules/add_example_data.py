@@ -268,16 +268,16 @@ def add_example_data():
         },
         # Task 20
         {
-            "place": "home",
-            "context": "recreate",
-            "tag": "reading",
-            "task": "read %book% for %time% minutes",
+            "place": "gym",
+            "context": "exercise",
+            "tag": "cardio",
+            "task": "complete a %time%-minute swimming session",
             "steps": [
-                "find a quiet and comfortable reading spot",
-                "set a timer for %time% minutes",
-                "focus on reading and understanding %book%",
-                "take brief notes if necessary",
-                "store the book safely after reading"
+                "warm up with a few laps",
+                "choose a swimming stroke and pace",
+                "maintain a steady pace for %time% minutes",
+                "cool down with a few laps",
+                "stretch after finishing the swim"
             ]
         }
     ]
