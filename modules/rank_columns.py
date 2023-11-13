@@ -1,5 +1,6 @@
 import sqlite3
 import functools
+import re
 
 def ask_user_cmp(item1, item2):
     while True:
@@ -35,6 +36,33 @@ def check_minimum_tasks(database_path):
     for place_id, count in task_counts:
         if count < 5:
             raise ValueError(f"Place ID {place_id} has only {count} tasks, which is less than the required minimum of 5.")
+
+def extract_placeholders(text):
+    # Regular expression to find placeholders in the format %placeholder%
+    pattern = re.compile(r"%(\w+)%")
+    return pattern.findall(text)
+
+def check_placeholders(database_path):
+    my_connection = sqlite3.connect(database_path)
+    my_cursor = my_connection.cursor()
+
+    # Retrieve all names from TASKS and STEPS
+    my_cursor.execute("SELECT NAME FROM TASKS UNION SELECT NAME FROM STEPS")
+    names = my_cursor.fetchall()
+
+    # Extract and collect all placeholders
+    placeholders = set()
+    for (name,) in names:
+        placeholders.update(extract_placeholders(name))
+
+    # Check each placeholder in the PLACEHOLDERS table
+    for placeholder in placeholders:
+        my_cursor.execute("SELECT COUNT(*) FROM PLACEHOLDERS WHERE TYPE = ?", (placeholder,))
+        count = my_cursor.fetchone()[0]
+        if count == 0:
+            raise ValueError(f"No values found for placeholder: {placeholder}")
+
+    my_connection.close()
 
 def fetch_records_for_ranking(database_path, table_name, parent_column=None, rank_column='RANK'):
     my_connection = sqlite3.connect(database_path)
