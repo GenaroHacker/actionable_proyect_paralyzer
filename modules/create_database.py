@@ -21,7 +21,7 @@ def insert_record(database_name, insert_sql, params=()):
 
 def create_empty_database():
     tables = {
-        "PLACES": "ID INTEGER PRIMARY KEY, NAME TEXT UNIQUE",
+        "PLACES": "ID INTEGER PRIMARY KEY, NAME TEXT UNIQUE, IS_SELECTED BOOLEAN DEFAULT FALSE",
         "CONTEXTS": "ID INTEGER PRIMARY KEY, PLACE_ID INTEGER, NAME TEXT, RANK INTEGER, "
                     "FOREIGN KEY(PLACE_ID) REFERENCES PLACES(ID), UNIQUE(PLACE_ID, NAME)",
         "TAGS": "ID INTEGER PRIMARY KEY, CONTEXT_ID INTEGER, NAME TEXT, RANK INTEGER, "
@@ -41,15 +41,21 @@ def check_or_insert_with_parent(table, name, parent_id_column, parent_id):
     with sqlite3.connect(DATABASE_NAME) as conn:
         cursor = conn.cursor()
 
-        if parent_id is None:  # Handling for places
+        if table == "PLACES":
             cursor.execute("SELECT ID FROM PLACES WHERE NAME = ?", (name,))
             record = cursor.fetchone()
             if record is None:
-                cursor.execute("INSERT INTO PLACES (NAME) VALUES (?)", (name,))
+                is_first_place = cursor.execute("SELECT COUNT(*) FROM PLACES").fetchone()[0] == 0
+                is_selected = 1 if is_first_place else 0
+                cursor.execute("INSERT INTO PLACES (NAME, IS_SELECTED) VALUES (?, ?)", (name, is_selected))
                 conn.commit()
+                if is_selected:
+                    new_place_id = cursor.lastrowid
+                    cursor.execute("UPDATE PLACES SET IS_SELECTED = 0 WHERE ID != ?", (new_place_id,))
+                    conn.commit()
                 return cursor.lastrowid
             return record[0]
-        else:  # Handling for contexts, tags, tasks
+        else:
             cursor.execute(f"SELECT ID FROM {table} WHERE NAME = ? AND {parent_id_column} = ?", (name, parent_id))
             record = cursor.fetchone()
             if record is None:
