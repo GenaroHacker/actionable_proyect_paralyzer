@@ -1,12 +1,6 @@
 import sqlite3
 from google.colab import files
 import os
-from actionable_builder.modules.sql_core import insert_several_records
-from actionable_builder.modules.sql_core import read_records
-from actionable_builder.modules.sql_core import read_last_record
-from actionable_builder.modules.sql_core import update_record
-from actionable_builder.modules.sql_core import remove_record
-from actionable_builder.modules.sql_core import run_command
 from actionable_builder.modules.add_example_data import add_example_data
 
 # Constant for the database name
