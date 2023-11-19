@@ -93,7 +93,10 @@ def add_placeholders(placeholders_dict):
                 continue
 
 def initialize_database(user_choice):
-    print("Choose an option:\n1. Create empty database\n2. Create database with example data\n3. Upload database\n")
+    print("\n1. Create empty database\n2. Create database with example data\n3. Upload database\n")
+    user_choice = str(user_choice)
+    print(user_choice)
+    print("\n")
     if user_choice == '1':
         create_empty_database()
     elif user_choice == '2':
