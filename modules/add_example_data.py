@@ -279,7 +279,34 @@ def add_example_data():
                 "cool down with a few laps",
                 "stretch after finishing the swim"
             ]
-        }
+        },
+    {"place": "alphabet", "context": "a", "tag": "a", "task": "a a a", "steps": ["."]},
+    {"place": "alphabet", "context": "a", "tag": "a", "task": "b a a", "steps": ["."]},
+    {"place": "alphabet", "context": "a", "tag": "a", "task": "c a a", "steps": ["."]},
+    {"place": "alphabet", "context": "a", "tag": "b", "task": "a b a", "steps": ["."]},
+    {"place": "alphabet", "context": "a", "tag": "b", "task": "b b a", "steps": ["."]},
+    {"place": "alphabet", "context": "a", "tag": "b", "task": "c b a", "steps": ["."]},
+    {"place": "alphabet", "context": "a", "tag": "c", "task": "a c a", "steps": ["."]},
+    {"place": "alphabet", "context": "a", "tag": "c", "task": "b c a", "steps": ["."]},
+    {"place": "alphabet", "context": "a", "tag": "c", "task": "c c a", "steps": ["."]},
+    {"place": "alphabet", "context": "b", "tag": "a", "task": "a a b", "steps": ["."]},
+    {"place": "alphabet", "context": "b", "tag": "a", "task": "b a b", "steps": ["."]},
+    {"place": "alphabet", "context": "b", "tag": "a", "task": "c a b", "steps": ["."]},
+    {"place": "alphabet", "context": "b", "tag": "b", "task": "a b b", "steps": ["."]},
+    {"place": "alphabet", "context": "b", "tag": "b", "task": "b b b", "steps": ["."]},
+    {"place": "alphabet", "context": "b", "tag": "b", "task": "c b b", "steps": ["."]},
+    {"place": "alphabet", "context": "b", "tag": "c", "task": "a c b", "steps": ["."]},
+    {"place": "alphabet", "context": "b", "tag": "c", "task": "b c b", "steps": ["."]},
+    {"place": "alphabet", "context": "b", "tag": "c", "task": "c c b", "steps": ["."]},
+    {"place": "alphabet", "context": "c", "tag": "a", "task": "a a c", "steps": ["."]},
+    {"place": "alphabet", "context": "c", "tag": "a", "task": "b a c", "steps": ["."]},
+    {"place": "alphabet", "context": "c", "tag": "a", "task": "c a c", "steps": ["."]},
+    {"place": "alphabet", "context": "c", "tag": "b", "task": "a b c", "steps": ["."]},
+    {"place": "alphabet", "context": "c", "tag": "b", "task": "b b c", "steps": ["."]},
+    {"place": "alphabet", "context": "c", "tag": "b", "task": "c b c", "steps": ["."]},
+    {"place": "alphabet", "context": "c", "tag": "c", "task": "a c c", "steps": ["."]},
+    {"place": "alphabet", "context": "c", "tag": "c", "task": "b c c", "steps": ["."]},
+    {"place": "alphabet", "context": "c", "tag": "c", "task": "c c c", "steps": ["."]}
     ]
 
     placeholders = {
