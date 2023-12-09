@@ -32,7 +32,8 @@ def create_empty_database():
                  "MINUTES INTEGER, FOREIGN KEY(TASK_ID) REFERENCES TASKS(ID), UNIQUE(TASK_ID, ORDER_SEQUENCE)",
         "PLACEHOLDERS": "ID INTEGER PRIMARY KEY, TYPE TEXT, VALUE TEXT, RANK INTEGER, UNIQUE(TYPE, VALUE)",
         "HISTORY": "ID INTEGER PRIMARY KEY, STEP_ID INTEGER, ACTION TEXT, TIME TEXT, "
-                   "FOREIGN KEY(STEP_ID) REFERENCES STEPS(ID)"
+                   "FOREIGN KEY(STEP_ID) REFERENCES STEPS(ID)",
+        "VARIABLES": "ID INTEGER PRIMARY KEY, KEY TEXT, VALUE TEXT"
     }
     for table_name, table_structure in tables.items():
         create_table(DATABASE_NAME, table_name, table_structure)
