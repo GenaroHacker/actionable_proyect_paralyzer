@@ -280,7 +280,7 @@ def add_example_data():
                 "stretch after finishing the swim"
             ]
         },
-    {"place": "alphabet", "context": "a", "tag": "a", "task": "a a a", "steps": ["."]},
+    {"place": "alphabet", "context": "a", "tag": "a", "task": "a a a", "steps": ["%duration% %duration% %duration% %duration% %duration% %duration% %duration% %duration%"]},
     {"place": "alphabet", "context": "a", "tag": "a", "task": "b a a", "steps": ["."]},
     {"place": "alphabet", "context": "a", "tag": "a", "task": "c a a", "steps": ["."]},
     {"place": "alphabet", "context": "a", "tag": "b", "task": "a b a", "steps": ["."]},
