@@ -80,7 +80,7 @@ def add_task(task_input):
 
     for index, step in enumerate(task_input["steps"], start=1):
         if not check_step_exists(task_id, index):
-            step_sql = "INSERT INTO STEPS (TASK_ID, NAME, ORDER_SEQUENCE, MINUTES) VALUES (?, ?, ?, NULL)"
+            step_sql = "INSERT INTO STEPS (TASK_ID, NAME, ORDER_SEQUENCE) VALUES (?, ?, ?)"
             insert_record(DATABASE_NAME, step_sql, (task_id, step, index))
 
 def add_placeholders(placeholders_dict):
