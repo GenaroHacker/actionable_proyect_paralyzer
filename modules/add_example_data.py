@@ -280,6 +280,20 @@ def add_example_data():
                 "stretch after finishing the swim"
             ]
         },
+        # Task 20
+        {
+            "place": "lorem",
+            "context": "exercise",
+            "tag": "cardio",
+            "task": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "steps": [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "choose a swimming stroke and pace",
+                "maintain a steady pace for %time% minutes",
+                "cool down with a few laps",
+                "stretch after finishing the swim"
+            ]
+        },
     {"place": "alphabet", "context": "a", "tag": "a", "task": "a a a", "steps": ["%duration% %duration% %duration% %duration% %duration% %duration% %duration% %duration%"]},
     {"place": "alphabet", "context": "a", "tag": "a", "task": "b a a", "steps": ["."]},
     {"place": "alphabet", "context": "a", "tag": "a", "task": "c a a", "steps": ["."]},
