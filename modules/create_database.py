@@ -116,7 +116,6 @@ def create_example_database():
     create_empty_database()
     insert_sql = "INSERT INTO VARIABLES (KEY, VALUE) VALUES (?, ?)"
     insert_record(DATABASE_NAME, insert_sql, ('current_task', '-'))
-    insert_record(DATABASE_NAME, insert_sql, ('current_step', '-'))
     
 def download_database():
     files.download(DATABASE_NAME)
