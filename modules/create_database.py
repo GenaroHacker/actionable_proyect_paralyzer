@@ -33,7 +33,9 @@ def create_empty_database():
         "PLACEHOLDERS": "ID INTEGER PRIMARY KEY, TYPE TEXT, VALUE TEXT, RANK INTEGER, UNIQUE(TYPE, VALUE)",
         "HISTORY": "ID INTEGER PRIMARY KEY, STEP_ID INTEGER, ACTION TEXT, TIME TEXT, "
                    "FOREIGN KEY(STEP_ID) REFERENCES STEPS(ID)",
-        "VARIABLES": "ID INTEGER PRIMARY KEY, KEY TEXT, VALUE TEXT"
+        "VARIABLES": "ID INTEGER PRIMARY KEY, KEY TEXT, VALUE TEXT",
+        "TODOS": "ID INTEGER PRIMARY KEY, NAME TEXT",
+        "HABITS": "ID INTEGER PRIMARY KEY, NAME TEXT, STARTED_DATE DATE"
     }
     for table_name, table_structure in tables.items():
         create_table(DATABASE_NAME, table_name, table_structure)
