@@ -35,7 +35,7 @@ def create_empty_database():
                    "FOREIGN KEY(STEP_ID) REFERENCES STEPS(ID)",
         "VARIABLES": "ID INTEGER PRIMARY KEY, KEY TEXT, VALUE TEXT",
         "TODOS": "ID INTEGER PRIMARY KEY, NAME TEXT",
-        "HABITS": "ID INTEGER PRIMARY KEY, NAME TEXT, STARTED_DATE DATE"
+        "HABITS": "ID INTEGER PRIMARY KEY, NAME TEXT, STARTED_DATE DATE, LAST_KEEP_DATE DATE"
     }
     for table_name, table_structure in tables.items():
         create_table(DATABASE_NAME, table_name, table_structure)
