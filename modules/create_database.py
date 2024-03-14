@@ -39,6 +39,9 @@ def create_empty_database():
     }
     for table_name, table_structure in tables.items():
         create_table(DATABASE_NAME, table_name, table_structure)
+    insert_sql = "INSERT INTO VARIABLES (KEY, VALUE) VALUES (?, ?)"
+    insert_record(DATABASE_NAME, insert_sql, ('current_task', '-'))
+    insert_record(DATABASE_NAME, insert_sql, ('todo_pointer', '1'))
 
 def check_or_insert_with_parent(table, name, parent_id_column, parent_id):
     with sqlite3.connect(DATABASE_NAME) as conn:
@@ -116,9 +119,6 @@ def initialize_database(user_choice):
 
 def create_example_database():
     create_empty_database()
-    insert_sql = "INSERT INTO VARIABLES (KEY, VALUE) VALUES (?, ?)"
-    insert_record(DATABASE_NAME, insert_sql, ('current_task', '-'))
-    insert_record(DATABASE_NAME, insert_sql, ('todo_pointer', '1'))
     
 def download_database():
     files.download(DATABASE_NAME)
