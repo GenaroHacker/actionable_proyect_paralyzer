@@ -13,13 +13,6 @@ def ask_user_cmp(item1, item2):
             return -1
         print("1 or 2, please!")
 
-##############################################################
-def ask_user_cmp(item1, item2):
-    # This function sorts items alphabetically in ascending order for automated testing.
-    # To switch back to manual sorting, delete this function and use the original 'ask_user_cmp'.
-    return (item1 < item2) - (item1 > item2)
-##############################################################
-
 def check_minimum_tasks(database_path):
     my_connection = sqlite3.connect(database_path)
     my_cursor = my_connection.cursor()
